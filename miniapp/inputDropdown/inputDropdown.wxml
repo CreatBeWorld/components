@@ -1,0 +1,14 @@
+<view class="input-dropdwon-container">
+  <view class="dropdown-container {{dropDownShow?'open':'close'}}">
+    <view class="clear-area" bindtap="dropDownTitleTap" style="border-color:{{dropDownShow?activeColor:'#999'}}">
+      <text class="text">{{selectedIndex===-1?'请选择':dropDownOptions[selectedIndex]}}</text>
+      <text class="icon" style="border-top-color:{{dropDownShow?activeColor:'#dcdee0'}}"></text>
+    </view>
+    <view class="dropdown-area" wx:if="{{dropDownOptions.length>0}}">
+      <view class="dropdown-item" wx:for="{{dropDownOptions}}" wx:key="index" style="color: {{selectedIndex===index?activeColor:'#333'}};" bindtap="dropDownItemTap" data-index="{{index}}">
+        {{item}}
+      </view>
+    </view>
+  </view>
+  <input type="text" value="{{inputValue}}" confirm-type="search" bindconfirm="inputConfirm" bindinput="inputHandle" focus="{{true}}" placeholder="请输入{{dropDownOptions[selectedIndex]}}"/>
+</view>
