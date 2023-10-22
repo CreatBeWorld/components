@@ -1,0 +1,6 @@
+<image
+  src="{{svgData}}"
+  wx:if="{{url.length>0&&svgShow}}"
+  style="width: {{width}};height: {{height}};"
+  class="custom-class"
+/>
